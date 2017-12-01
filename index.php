@@ -21,7 +21,7 @@
   </head>
 
   <body id="page-top">
-
+    <? php include ("connection.php"); ?>
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
       <div class="container">
