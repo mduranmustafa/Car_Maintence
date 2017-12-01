@@ -21,7 +21,7 @@
   </head>
 
   <body id="page-top">
-    <? php include ("connection.php"); ?>
+
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
       <div class="container">
@@ -58,6 +58,7 @@
           <div class="col-lg-8 mx-auto">
             <h2>The Current Status</h2>
             <p class="lead"></p>
+            <?php include ("connection.php"); ?>
           </div>
         </div>
       </div>
