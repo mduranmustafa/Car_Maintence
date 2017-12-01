@@ -70,6 +70,7 @@
           <div class="col-lg-8 mx-auto">
             <h2>Registered Cars</h2>
             <p class="lead"> This par is for registered cars</p>
+            <?php include "current_cars_list.php"; ?>
           </div>
         </div>
       </div>
