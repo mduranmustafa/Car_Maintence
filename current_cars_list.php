@@ -1,6 +1,6 @@
 <?php
-echo "<table style='border: solid 1px black;'>";
-echo "<tr><th>Brand</th><th>Model</th><th>Year</th><th>Plate </th></tr>";
+echo "<table class='table table-striped'>";
+echo "<tr><th>Brand</th><th>Model</th><th>Year</th><th>Plate </th><th>AVE. MPG</th></tr>";
 
 class TableRows extends RecursiveIteratorIterator {
     function __construct($it) {
@@ -8,7 +8,7 @@ class TableRows extends RecursiveIteratorIterator {
     }
 
     function current() {
-        return "<td style='width:150px;border:1px solid black;'>" . parent::current(). "</td>";
+        return "<td>" . parent::current(). "</td>";
     }
 
     function beginChildren() {
@@ -28,7 +28,7 @@ $dbname = "car_maintence";
 try {
     $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    $stmt = $conn->prepare("SELECT brand, model, year, plate FROM cars");
+    $stmt = $conn->prepare("SELECT brand, model, year, plate, MPG FROM cars");
     $stmt->execute();
 
     // set the resulting array to associative
