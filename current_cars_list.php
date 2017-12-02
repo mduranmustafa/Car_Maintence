@@ -28,13 +28,18 @@ $dbname = "car_maintence";
 try {
     $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    $stmt = $conn->prepare("SELECT brand, model, year, plate, MPG FROM cars");
+    $stmt = $conn->prepare("SELECT brand, model, year, plate, MPG, saled FROM cars");
     $stmt->execute();
 
     // set the resulting array to associative
     $result = $stmt->setFetchMode(PDO::FETCH_ASSOC);
     foreach(new TableRows(new RecursiveArrayIterator($stmt->fetchAll())) as $k=>$v) {
-        echo $v;
+        if ($result['saled']==0)
+		{
+			echo $v;
+		}
+		
+		
     }
 }
 catch(PDOException $e) {
